@@ -44,3 +44,32 @@ const results = [
     * redirect to results
 * else
     * **generatePokemon**
+---
+## lecture example generateFruit
+
+```javascript
+    import { fruits } from './fruits.js';
+    // generate 2 random fruit
+    const generateFruit = () =>{
+        let randNum1 = Math.floor(Math.random() * fruit.length);
+        let randNum2 = Math.floor(Math.random() * fruit.length);
+        let randNum3 = Math.floor(Math.random() * fruit.length);
+        //regenerate the number if they match
+        while (
+            randNum1 === randNum2 || 
+            randNum1 === randomNum3 || 
+            randomNum2 === randomNum3
+            ) {
+                randNum1 = Math.floor(Math.random() * fruit.length);
+                randNum2 = Math.floor(Math.random() * fruit.length);
+                randNum3 = Math.floor(Math.random() * fruit.length);
+            }
+        let fruit1 = fruits[randomNum1];
+        fruit1Img.src = fruit1.image;
+        let fruit2 = fruits[randomNum2];
+        fruit2Img.src = fruit2.image;
+    // call showFruit for each
+    // render the fruit on the page
+    };
+    generateFruit();
+```
