@@ -2,17 +2,11 @@ import pokemon from './data/pokemon.js';
 // import { findByID } from './utils.js';
 const catchBtn = document.getElementById('catch-button');
 const errorMessage = document.getElementById('error');
+const playCountSpan = document.getElementById('play-count');
 const pokemon1Img = document.getElementById('poke-1-img');
 const pokemon2Img = document.getElementById('poke-2-img');
 const pokemon3Img = document.getElementById('poke-3-img');
 // const playCountSpan = document.getElementById('play-count');
-
-catchBtn.addEventListener('click', ()=>{
-    const selected = document.querySelector('input[type=radio]:checked');
-    if (!selected) {
-        errorMessage.classList.remove('hidden');
-    }
-});
 
 const generatePokemon = () =>{
     let randNum1 = Math.floor(Math.random() * pokemon.length);
@@ -21,8 +15,8 @@ const generatePokemon = () =>{
 
     while (
         randNum1 === randNum2 || 
-      randNum1 === randNum3 || 
-      randNum2 === randNum3
+    randNum1 === randNum3 || 
+    randNum2 === randNum3
     ) {
         randNum1 = Math.floor(Math.random() * pokemon.length);
         randNum2 = Math.floor(Math.random() * pokemon.length);
@@ -36,4 +30,20 @@ const generatePokemon = () =>{
     let pokemon3 = pokemon[randNum3];
     pokemon3Img.src = pokemon3.url_image;
 };
+
 generatePokemon();
+
+let playCount = 0;
+
+catchBtn.addEventListener('click', ()=>{
+    const selected = document.querySelector('input[type=radio]:checked');
+    if (!selected) {
+        errorMessage.classList.remove('hidden');
+    }
+    else {
+        playCount++;
+        errorMessage.classList.add('hidden');
+        generatePokemon();
+    }
+    console.log(playCount);
+});
