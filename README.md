@@ -11,7 +11,6 @@
 > ### tests
 >* test generatePokemon
 >   * random # gen
-
 >### functions
 >* findByID 
 >* getResults

@@ -1,0 +1,50 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color:lightseagreen;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.main-section {
+    background-color: lightblue;
+}
+
+.pokemon-options {
+    display: flex;
+    justify-content: center;
+
+}
+
+.main-page-buttons {
+    display: flex;
+    justify-content: center;
+    background-color: lavender;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]:checked + img {
+    background-color: pink;
+}
