@@ -1,6 +1,32 @@
 # Pokemon Plan
+>---
+>### step one
+>* start dev branch...
+>### step two
+>* add basic HTML structure
+>   * include classes, ids, etc...
+>* add bare bones css for readability
+>### step three
+>* create necessary documents for functions, data, and apps.
+> ### tests
+>* test generatePokemon
+>   * random # gen
+
+>### functions
+>* findByID 
+>* getResults
+>   * fetch data from localStorage
+>* Total plays function 
+>   * to 10, redirect to results page
+>* pokeEncountered(id)
+>   * increments # of times encountered
+>* pokeCaught
+>   * increments # of times caught
+>---
+---
+---
 > ---
-> ## structure
+> ### file structure
 >* home page (root directory)
    > * index.html
     >* app.js
