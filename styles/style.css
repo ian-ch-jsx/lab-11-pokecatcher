@@ -41,6 +41,15 @@ h2 {
     background-color: lavender;
 }
 
+#error {
+    display: flex;
+    justify-content: center;
+}
+
+#error.hidden {
+    display: none;
+}
+
 input[type=radio] {
     display: none;
 }

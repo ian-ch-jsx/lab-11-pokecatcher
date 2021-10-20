@@ -1,16 +1,15 @@
 // import pokemon from './data/pokemon.js';
 // import { findByID } from './utils.js';
 const catchBtn = document.getElementById('catch-button');
+const errorMessage = document.getElementById('error');
 // const playCountSpan = document.getElementById('play-count');
 
 catchBtn.addEventListener('click', ()=>{
     const selected = document.querySelector('input[type=radio]:checked');
     if (!selected) {
-        console.log('help');
+        errorMessage.classList.remove('hidden');
     }
 });
-
-
 
 
 // const generatePokemon = () =>{
