@@ -1,5 +1,6 @@
-import { findByID } from '../utils.js';
+import { findByID } from '../storage-utils.js';
 import pokemon from '../data/pokemon.js';
+import { getPokedex } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -39,4 +40,16 @@ test('findByID should return matching item', (expect)=>{
     };
     const actual = findByID(1, pokemon);
     expect.deepEqual(actual, expected);
+});
+
+test('getPokedex returns the key "POKEDEX" from localStorage', (expect) =>{
+    const pokedex = [
+        { id: 3, shown: 2, picked: 5 },
+        { id: 1, shown: 3, picked: 1 }
+    ];
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, pokedex);
 });

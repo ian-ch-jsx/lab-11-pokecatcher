@@ -1,12 +1,12 @@
 import pokemon from './data/pokemon.js';
-// import { findByID } from './utils.js';
+// import { findByID } from './storage-utils.js';
+
 const catchBtn = document.getElementById('catch-button');
 const errorMessage = document.getElementById('error');
 const playCountSpan = document.getElementById('play-count');
 const pokemon1Img = document.getElementById('poke-1-img');
 const pokemon2Img = document.getElementById('poke-2-img');
 const pokemon3Img = document.getElementById('poke-3-img');
-// const playCountSpan = document.getElementById('play-count');
 
 const generatePokemon = () =>{
     let randNum1 = Math.floor(Math.random() * pokemon.length);
