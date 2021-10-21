@@ -30,6 +30,9 @@ export function catchPokemon(id) {
     let poke = findByID(pokedex, id);
 
     poke.caught++;
+    setPokedex(poke);
+}
 
+export function setPokedex(pokedex){
     localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
 }
