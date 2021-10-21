@@ -1,4 +1,4 @@
-import { findByID } from '../storage-utils.js';
+import { encounterPokemon, findByID } from '../storage-utils.js';
 import pokemon from '../data/pokemon.js';
 import { getPokedex } from '../storage-utils.js';
 
@@ -38,7 +38,7 @@ test('findByID should return matching item', (expect)=>{
         'pokebase':'bulbasaur',
         'pokedex':'http://www.pokemon.com/us/pokedex/bulbasaur'
     };
-    const actual = findByID(1, pokemon);
+    const actual = findByID(pokemon, 1);
     expect.deepEqual(actual, expected);
 });
 
@@ -62,3 +62,20 @@ test('getPokedex returns an empty array if there is no POKEDEX key in localStora
     expect.deepEqual(actual, []);
 });
 
+test('encounterPokemon increments the encountered key when the poke exists in results', (expect)=>{
+    const pokedex = [
+        { id: 'pikachu', encountered: 1, captured: 1 },
+    ];
+
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const expected = [
+        { id: 'pikachu', encountered: 2, captured: 1 },
+    ];
+
+    encounterPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+});

@@ -1,4 +1,4 @@
-export function findByID(id, pokemon){
+export function findByID(pokemon, id){
     for (let poke of pokemon){
         if (poke.id === id){
             return poke;
@@ -22,14 +22,14 @@ export function encounterPokemon(id) {
         const newPoke = { id: id, encountered: 1, caught: 0 };
         pokedex.push(newPoke);
     }
-    localStorage.setPoke('POKEDEX', JSON.stringify(pokedex));
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
 }
 
-export function capturePokemon(id){
-    let pokedex = getPokedex();
-    let poke = findByID(pokedex, id);
+// export function capturePokemon(id){
+//     let pokedex = getPokedex();
+//     let poke = findByID(pokedex, id);
 
-    poke.captured++;
+//     poke.captured++;
 
-    localStorage.setPoke('POKEDEX', JSON.stringify(pokedex));
-}
+//     localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+// }
