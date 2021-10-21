@@ -79,3 +79,18 @@ test('encounterPokemon increments the encountered key when the poke exists in re
 
     expect.deepEqual(actual, expected);
 });
+
+test('encounterPokemon adds a new poke if its not in the results', (expect) =>{
+    localStorage.removeItem('POKEDEX');
+
+    const expected = [
+        { id: 'pikachu', encountered: 1, caught: 0 }
+    ];
+
+    encounterPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+
+});
