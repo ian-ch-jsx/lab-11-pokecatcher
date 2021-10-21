@@ -25,11 +25,11 @@ export function encounterPokemon(id) {
     localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
 }
 
-// export function capturePokemon(id){
-//     let pokedex = getPokedex();
-//     let poke = findByID(pokedex, id);
+export function catchPokemon(id) {
+    let pokedex = getPokedex();
+    let poke = findByID(pokedex, id);
 
-//     poke.captured++;
+    poke.caught++;
 
-//     localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
-// }
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+}

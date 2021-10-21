@@ -1,4 +1,4 @@
-import { encounterPokemon, findByID } from '../storage-utils.js';
+import { catchPokemon, encounterPokemon, findByID } from '../storage-utils.js';
 import pokemon from '../data/pokemon.js';
 import { getPokedex } from '../storage-utils.js';
 
@@ -93,4 +93,22 @@ test('encounterPokemon adds a new poke if its not in the results', (expect) =>{
 
     expect.deepEqual(actual, expected);
 
+});
+
+test('catchPokemon adds poke to the caught key when the pokemon exists in pokedex', (expect)=>{
+    const pokedex = [ 
+        { id: 'pikachu', encountered: 3, caught: 1 }
+    ];
+
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const expected = [
+        { id: 'pikachu', encountered: 3, caught: 2 }
+    ];
+
+    catchPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
 });
