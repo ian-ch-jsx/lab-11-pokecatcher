@@ -12,17 +12,15 @@ const generatePokemon = () =>{
     let randNum1 = Math.floor(Math.random() * pokemon.length);
     let randNum2 = Math.floor(Math.random() * pokemon.length);
     let randNum3 = Math.floor(Math.random() * pokemon.length);
-
     while (
         randNum1 === randNum2 || 
-    randNum1 === randNum3 || 
-    randNum2 === randNum3
+        randNum1 === randNum3 || 
+        randNum2 === randNum3
     ) {
         randNum1 = Math.floor(Math.random() * pokemon.length);
         randNum2 = Math.floor(Math.random() * pokemon.length);
         randNum3 = Math.floor(Math.random() * pokemon.length);    
     }
-
     let pokemon1 = pokemon[randNum1];
     pokemon1Img.src = pokemon1.url_image;
     let pokemon2 = pokemon[randNum2];
@@ -40,10 +38,13 @@ catchBtn.addEventListener('click', ()=>{
     if (!selected) {
         errorMessage.classList.remove('hidden');
     }
-    else {
+    else if (playCount < 9) {
         playCount++;
         errorMessage.classList.add('hidden');
         generatePokemon();
     }
-    console.log(playCount);
+    else {
+        window.location.replace('./results');
+    }
+    playCountSpan.textContent = playCount + ' of 10 plays.';
 });

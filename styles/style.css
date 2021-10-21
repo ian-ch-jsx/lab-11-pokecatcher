@@ -1,8 +1,6 @@
-* {
-    font-family: sans-serif;
-}
-
 body {
+    background-color: #F5F4C0;
+    font-family: 'Noto Sans Mono', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -10,24 +8,35 @@ body {
 header {
     display: flex;
     justify-content: center;
-    background-color:lightseagreen;
+    background-color: #F5F4C0;
+    margin: 10px;
 }
 
 h1 {
+    color: #FFDE00;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    -webkit-text-stroke: 4px #3B4CCA;
+    text-transform: uppercase;
+    font-weight: lighter;
     display: flex;
     justify-content: center;
 
 }
 
 h2 {
+    color: #3B4CCA;
+    font-family: 'Press Start 2P', sans-serif;
+    font-weight: lighter;
     display: flex;
     justify-content: center;
 
 }
 
-.main-section {
+/* .main-section {
     background-color: lightblue;
-}
+} */
 
 .pokemon-options {
     display: flex;
@@ -38,7 +47,7 @@ h2 {
 .main-page-buttons {
     display: flex;
     justify-content: center;
-    background-color: lavender;
+    /* background-color: lavender; */
 }
 
 #error {
@@ -50,10 +59,33 @@ h2 {
     display: none;
 }
 
+#play-count {
+    display: flex;
+    justify-content: center;
+}
+
 input[type=radio] {
     display: none;
 }
 
+input[type=radio] + img {
+    width: 200px;
+    padding: 40px;
+}
+
 input[type=radio]:checked + img {
-    background-color: pink;
+    background-color: #CC0000;
+    padding: 40px;
+    border-radius: 50%;
+}
+
+button {
+    margin: 20px;
+    border-radius: 100%;
+    border: 0px;
+    background-color: transparent;
+    color:#FFDE00;
+    font-family: 'Noto Sans Mono', sans-serif;
+    font-size: 1rem;
+    text-align: center;
 }
