@@ -24,3 +24,12 @@ export function encounterPokemon(id) {
     }
     localStorage.setPoke('POKEDEX', JSON.stringify(pokedex));
 }
+
+export function capturePokemon(id){
+    let pokedex = getPokedex();
+    let poke = findByID(pokedex, id);
+
+    poke.captured++;
+
+    localStorage.setPoke('POKEDEX', JSON.stringify(pokedex));
+}

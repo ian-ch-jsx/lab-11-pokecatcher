@@ -53,3 +53,12 @@ test('getPokedex returns the key "POKEDEX" from localStorage', (expect) =>{
 
     expect.deepEqual(actual, pokedex);
 });
+
+test('getPokedex returns an empty array if there is no POKEDEX key in localStorage', (expect)=>{
+    localStorage.removeItem('POKEDEX');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, []);
+});
+
