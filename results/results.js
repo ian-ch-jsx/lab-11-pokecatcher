@@ -28,3 +28,106 @@ for (let species of pokedex){
     resultsSpan3.append(img);
     main.append(div);
 }
+
+const name = pokedex.map((species)=>{
+    const poke = findByID(pokemon, species.id);
+    return poke.pokemon;
+
+});
+const caught = pokedex.map(species=>species.caught);
+
+const encountered = pokedex.map(species=>species.encountered);
+
+// console.log(caught);
+// console.log(encountered);
+var ctx = document.getElementById('resultsChart').getContext('2d');
+// eslint-disable-next-line no-undef
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: name,
+        datasets: [{
+            label: 'Pokemon Caught',
+            data: caught,
+            backgroundColor: [
+                'rgba(189,158,177, 0.6)',
+                'rgba(206,102,78, 0.4)',
+                'rgba(15,209,198, 0.4)',
+                'rgba(56,63,78, 0.5)',
+                'rgba(233,182,187, 0.5)',
+                'rgba(88,167,150, 0.2)',
+                'rgba(175,216,232, 0.5)',
+                'rgba(229,129,53, 0.4)',
+                'rgba(153,164,106, 0.5)',
+                'rgba(102,175,181, 0.4)',
+                'rgba(235,228,179, 0.5)',
+                'rgba(75,90,75, 0.5)',
+                'rgba(116,64,90, 0.5)',
+                'rgba(130,56,59, 0.5)'
+            ],
+            borderColor: [
+                'rgba(189,158,177, 1)',
+                'rgba(206,102,78, 1)',
+                'rgba(15,209,198, 1)',
+                'rgba(56,63,78, 1)',
+                'rgba(233,182,187, 1)',
+                'rgba(88,167,150, 1)',
+                'rgba(175,216,232, 1)',
+                'rgba(229,129,53, 1)',
+                'rgba(153,164,106, 1)',
+                'rgba(102,175,181, 1)',
+                'rgba(194,149,79, 1)',
+                'rgba(75,90,75, 1)',
+                'rgba(116,64,90, 1)',
+                'rgba(130,56,59, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Pokemon encountered',
+            data: encountered,
+            backgroundColor: [
+                'rgba(189,158,177, 0.6)',
+                'rgba(206,102,78, 0.4)',
+                'rgba(15,209,198, 0.4)',
+                'rgba(56,63,78, 0.5)',
+                'rgba(233,182,187, 0.5)',
+                'rgba(88,167,150, 0.2)',
+                'rgba(175,216,232, 0.5)',
+                'rgba(229,129,53, 0.4)',
+                'rgba(153,164,106, 0.5)',
+                'rgba(102,175,181, 0.4)',
+                'rgba(235,228,179, 0.5)',
+                'rgba(75,90,75, 0.5)',
+                'rgba(116,64,90, 0.5)',
+                'rgba(130,56,59, 0.5)'
+            ],
+            borderColor: [
+                'rgba(189,158,177, 1)',
+                'rgba(206,102,78, 1)',
+                'rgba(15,209,198, 1)',
+                'rgba(56,63,78, 1)',
+                'rgba(233,182,187, 1)',
+                'rgba(88,167,150, 1)',
+                'rgba(175,216,232, 1)',
+                'rgba(229,129,53, 1)',
+                'rgba(153,164,106, 1)',
+                'rgba(102,175,181, 1)',
+                'rgba(194,149,79, 1)',
+                'rgba(75,90,75, 1)',
+                'rgba(116,64,90, 1)',
+                'rgba(130,56,59, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true,
+                stacked: false
+            }
+        }
+    }
+});

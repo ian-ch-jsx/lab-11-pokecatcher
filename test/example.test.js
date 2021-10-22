@@ -1,4 +1,4 @@
-import { catchPokemon, encounterPokemon, findByID } from '../storage-utils.js';
+import { catchPokemon, encounterPokemon, findByID, setPokedex } from '../storage-utils.js';
 import pokemon from '../data/pokemon.js';
 import { getPokedex } from '../storage-utils.js';
 
@@ -111,4 +111,18 @@ test('catchPokemon adds poke to the caught key when the pokemon exists in pokede
     const actual = getPokedex();
 
     expect.deepEqual(actual, expected);
+});
+
+test('setPokedex sets local storage', (expect)=>{
+    localStorage.removeItem('POKEDEX');
+
+    const expected = [];
+
+    setPokedex(expected);
+
+    const pokeString = localStorage.getItem('POKEDEX');
+
+    const actual = JSON.parse(pokeString);
+
+    expect.deepEqual(expected, actual);
 });

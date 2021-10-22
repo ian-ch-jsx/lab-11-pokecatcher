@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/results.css">
     <title>Pokecatcher</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 </head>
 
 <body>
@@ -24,9 +25,15 @@
     <header>
         <h4>Pokedex</h4>
     </header>
+
     <main id="main-container">
         <section class="main" id="main">
         </section>
+        <div id="chart-container">
+            <section class="chart">
+                <canvas id="resultsChart" width="400" height="400"></canvas>
+            </section>
+        </div>
     </main>
 
     <script type="module" src="./results.js"></script>

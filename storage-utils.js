@@ -41,4 +41,3 @@ export function catchPokemon(id) {
 export function releasePokemon() {
     localStorage.removeItem(catchPokemon);
 }
-

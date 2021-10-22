@@ -66,3 +66,9 @@ button#home {
 img.results-image {
     max-height: 70px;
 }
+
+#chart-container{
+    margin: auto;
+    padding-bottom: 50px;
+    width:900px;
+}
