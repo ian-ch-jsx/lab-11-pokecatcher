@@ -31,3 +31,13 @@ span {
 img {
     width: 150px;
 }
+
+.buttons {
+    display:flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+button#home{
+    background-color: #3B4CCA;
+}
