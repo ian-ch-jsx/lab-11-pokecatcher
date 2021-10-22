@@ -1,6 +1,5 @@
 body {
-    background-image: url(../assets/backgroundfield.jpg);
-    background-color: #F5F4C0;
+    background-color: #fefefe;
     font-family: 'Noto Sans Mono', sans-serif;
     display: flex;
     flex-direction: column;
@@ -9,7 +8,7 @@ body {
 header {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin-top: 50px;
 }
 
 h1 {
@@ -20,34 +19,50 @@ h1 {
     -webkit-text-stroke: 4px #3B4CCA;
     text-transform: uppercase;
     font-weight: lighter;
-    display: flex;
-    justify-content: center;
-
+    position: absolute;
+    top: 100px;
 }
 
 h2 {
     color: #3B4CCA;
     font-family: 'Press Start 2P', sans-serif;
     font-weight: lighter;
-    display: flex;
-    justify-content: center;
-
+    position: absolute;
+    top: 200px;
 }
 
-/* .main-section {
-    background-color: lightblue;
-} */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 40px;
+}
+
+.main-section {
+    background-image: url("../assets/backgroundfield.jpg");
+    width: 1200px;
+    height: 780px;
+    border: 6px double #fefefe;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 
 .pokemon-options {
-    display: flex;
-    justify-content: center;
-
-}
+    max-height: 250px;
+    position: absolute;
+    top: 460px;
+  }
 
 .main-page-buttons {
-    display: flex;
-    justify-content: center;
-    /* background-color: lavender; */
+    position: absolute;
+    top: 690px;
 }
 
 #error {
@@ -69,20 +84,17 @@ input[type=radio] {
 }
 
 input[type=radio] + img {
-    max-width: 200px;
-    max-height: 250px;
-    padding: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 input[type=radio]:checked + img {
-    background-color: #CC0000;
-    padding: 40px;
-    border-radius: 50%;
+    animation-name: bounce;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 button {
-    /* margin: 20px;
-    border-radius: 100%; */
     padding: 10px;
     border: 0px;
     background-color: transparent;
@@ -97,3 +109,11 @@ a {
     color: #FFDE00;
     text-decoration: none;
 }
+
+@keyframes bounce {
+    0%, 20%, 40%, 60%, 80%, 100% {transform: translateY(0);} 
+    30% {transform: translateY(-30px);} 
+    50% {transform: translateY(-15px);} 
+    70% {transform: translateY(-30px);} 
+    90% {transform: translateY(-15px);} 
+  }
