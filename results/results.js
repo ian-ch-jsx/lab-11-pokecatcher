@@ -35,8 +35,8 @@ const name = pokedex.map((species)=>{
 
 });
 console.log(name);
-const caught = pokedex.map(species=>species.picked);
-
+const caught = pokedex.map(species=>species.caught);
+console.log(caught);
 var ctx = document.getElementById('resultsChart').getContext('2d');
 // eslint-disable-next-line no-undef
 new Chart(ctx, {
