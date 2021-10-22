@@ -63,7 +63,7 @@ catchBtn.addEventListener('click', ()=>{
     else {
         generatePokemon();
     }
-    playCountSpan.textContent = playCount + ' of 10 plays.';
+    playCountSpan.textContent = playCount + ' of 10 throws.';
 });
 
 resetBtn.addEventListener('click', ()=>{

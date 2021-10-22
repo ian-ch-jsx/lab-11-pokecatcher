@@ -1,44 +1,68 @@
-
-
 .main {
     display: flex;
-    align-self:center;
-    justify-content: center;
-}
-
-.main-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:center;
-    width: 900px;
-}
-
-div {
-    display:flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px;
-}
-span {
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
+    vertical-align: middle;
 }
 
-img {
-    max-width: 150px;
-    max-height: 150px;
+#main-container {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
 }
 
 .buttons {
-    display:flex;
-    justify-content: center;
-    margin: 0px;
+    display: flex;
+    justify-content: right;
+    padding: 50px 50px 0px 0px;
 }
 
-button#home{
+h3 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #3B4CCA;
+    font-weight: lighter;
+    text-align: left;
+    padding-right: 20px;
+}
+
+h4 {
+    color: #F3F63C;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    -webkit-text-stroke: 4px #3B4CCA;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: 0px;
+}
+
+.results-container {
+    justify-content: center;
+    display: flex;
+    vertical-align: middle;
+    padding: 0px;
+ 
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 40px;
+}
+
+button#home {
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px double #fefefe;
     background-color: #3B4CCA;
+    color:#F3F63C;
+    font-family: 'Noto Sans Mono', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+img.results-image {
+    max-height: 70px;
 }

@@ -89,6 +89,7 @@ h2 {
     font-weight: bolder;
     display: flex;
     justify-content: center;
+    padding-top: 5px;
 }
 
 #reset-button {
