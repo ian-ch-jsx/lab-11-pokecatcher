@@ -29,17 +29,17 @@ const generatePokemon = () =>{
     }
     let pokemon1 = pokemon[randNum1];
     encounterPokemon(pokemon1.id);
-    pokemon1Img.src = pokemon1.url_image;
+    pokemon1Img.src = `./${pokemon1.url_image}`;
     pokemon1Radio.value = pokemon1.id;
 
     let pokemon2 = pokemon[randNum2];
     encounterPokemon(pokemon2.id);
-    pokemon2Img.src = pokemon2.url_image;
+    pokemon2Img.src = `./${pokemon2.url_image}`;
     pokemon2Radio.value = pokemon2.id;
 
     let pokemon3 = pokemon[randNum3];
     encounterPokemon(pokemon3.id);
-    pokemon3Img.src = pokemon3.url_image;
+    pokemon3Img.src = `./${pokemon1.url_image}`;
     pokemon3Radio.value = pokemon3.id;
 };
 
