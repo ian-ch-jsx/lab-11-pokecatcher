@@ -1,4 +1,5 @@
 body {
+    background-image: url(../assets/backgroundfield.jpg);
     background-color: #F5F4C0;
     font-family: 'Noto Sans Mono', sans-serif;
     display: flex;
@@ -8,7 +9,6 @@ body {
 header {
     display: flex;
     justify-content: center;
-    background-color: #F5F4C0;
     margin: 10px;
 }
 
