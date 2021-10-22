@@ -66,3 +66,7 @@ button#home {
 img.results-image {
     max-height: 70px;
 }
+
+.resultschart {
+    width: 400px;
+}
