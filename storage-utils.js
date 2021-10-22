@@ -37,3 +37,8 @@ export function catchPokemon(id) {
     poke.caught++;
     setPokedex(pokedex);
 }
+
+export function releasePokemon() {
+    localStorage.removeItem(catchPokemon);
+}
+

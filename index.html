@@ -17,36 +17,38 @@
 </head>
 
 <body>
-    <header>
-        <h1>PokeCatcher</h1>
-    </header>
-    <main>
-        <section class="main-section">
-            <h2>choose your pokemon</h2>
-            <div class="pokemon-options">
-                <label class="pokemon-choice">
-                    <input type="radio" name="pokemon" id="poke-1-radio">
-                    <img src="./assets/absol.png" id="poke-1-img">
+    <div class="container">
+        <header></header>
+        <main>
+            <section class="main-section">
+                <h1>PokeCatcher</h1>
+                <h2>choose your pokemon...</h2>
+                <div class="pokemon-options">
+                    <label class="pokemon-choice">
+                        <input type="radio" name="pokemon" id="poke-1-radio">
+                        <img src="./assets/absol.png" id="poke-1-img">
+                    </label>
+                    <label class="pokemon-choice">
+                        <input name="pokemon" type="radio" id="poke-2-radio">
+                        <img src="./assets/archeops.png" id="poke-2-img">
+                    </label>
+                    <label class="pokemon-choice">
+                        <input name="pokemon" type="radio" id="poke-3-radio">
+                        <img src="./assets/mimikyu.png" id="poke-3-img">
+                    </label>      
+                </div>
+                <label class="main-page-buttons">
+                    <button id="catch-button"><img src="./assets/pokeball.gif" width="80px"></button>
                 </label>
-                <label class="pokemon-choice">
-                    <input name="pokemon" type="radio" id="poke-2-radio">
-                    <img src="./assets/archeops.png" id="poke-2-img">
-                </label>
-                <label class="pokemon-choice">
-                    <input name="pokemon" type="radio" id="poke-3-radio">
-                    <img src="./assets/mimikyu.png" id="poke-3-img">
-                </label>      
-            </div>
+            </section>
             <span id="error" class="hidden">You didn't select a pokemon!</span>
-            <label class="main-page-buttons">
-                <button id="catch-button"><img src="./assets/pokeball.gif" width="80px"></button>
-                <!-- <button id="reset-button">Start Over</button> -->
-            </label>
-            <section><center>click the pokeball to throw.</center></section>
+            <section id="instructions"><center>click the pokeball to throw.<br></center></section>
             <span id="play-count"></span>
-        </section>
-    </main>
-
+            <span id="reset-button">
+                <button id="reset">release pokemon</button>
+            </span>
+        </main>
+    </div>
     <script type="module" src="./app.js"></script>
 </body>
 

@@ -2,6 +2,7 @@ import pokemon from './data/pokemon.js';
 import { catchPokemon, encounterPokemon } from './storage-utils.js';
 
 const catchBtn = document.getElementById('catch-button');
+const resetBtn = document.getElementById('reset');
 const errorMessage = document.getElementById('error');
 const playCountSpan = document.getElementById('play-count');
 
@@ -62,5 +63,12 @@ catchBtn.addEventListener('click', ()=>{
     else {
         generatePokemon();
     }
-    playCountSpan.textContent = playCount + ' of 10 plays.';
+    playCountSpan.textContent = playCount + ' of 10 throws.';
+});
+
+resetBtn.addEventListener('click', ()=>{
+    localStorage.removeItem('POKEDEX');
+    generatePokemon();
+    playCount = 0;
+    playCountSpan.textContent = 'all pokemon released!';
 });

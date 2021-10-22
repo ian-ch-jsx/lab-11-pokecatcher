@@ -7,7 +7,7 @@ const test = QUnit.test;
 test('findByID should return matching item', (expect)=>{
     const expected = {
         '_id':'5cef3501ef6005a77cd4fd17',
-        'pokemon':'bulbasaur',
+        'pokemon':'Absol',
         'id':1,
         'species_id':1,
         'height':7,
@@ -29,7 +29,7 @@ test('findByID should return matching item', (expect)=>{
         'color_f':'#81A763',
         'egg_group_1':'monster',
         'egg_group_2':'plant',
-        'url_image':'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+        'url_image':'../assets/absol.png',
         'generation_id':1,
         'evolves_from_species_id':'NA',
         'evolution_chain_id':1,
