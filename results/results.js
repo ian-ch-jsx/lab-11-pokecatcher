@@ -9,7 +9,7 @@ for (let species of pokedex){
     const poke = findByID(pokemon, species.id);
     const div = document.createElement('div');
     const img = document.createElement('img');
-    img.src = poke.url_image;
+    img.src = `../${poke.url_image}`;
     const header = document.createElement('h2');
     header.textContent = poke.pokemon;
     const resultsSpan1 = document.createElement('span');

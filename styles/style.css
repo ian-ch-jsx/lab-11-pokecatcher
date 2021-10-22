@@ -69,7 +69,8 @@ input[type=radio] {
 }
 
 input[type=radio] + img {
-    width: 200px;
+    max-width: 200px;
+    max-height: 250px;
     padding: 40px;
 }
 
