@@ -112,12 +112,3 @@ test('catchPokemon adds poke to the caught key when the pokemon exists in pokede
 
     expect.deepEqual(actual, expected);
 });
-
-// test('setPokedex functioning', (expect) =>{
-//     const expected = [
-//         { id: 'pikachu', encountered: 3, caught: 1 }
-//     ];
-//     setPokedex(expected);
-//     const actual = getPokedex();
-//     expect.deepEqual(actual, expected);
-// });

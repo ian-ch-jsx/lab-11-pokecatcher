@@ -36,7 +36,4 @@ export function catchPokemon(id) {
 
     poke.caught++;
     setPokedex(pokedex);
-
 }
-
-
