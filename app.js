@@ -39,7 +39,7 @@ const generatePokemon = () =>{
 
     let pokemon3 = pokemon[randNum3];
     encounterPokemon(pokemon3.id);
-    pokemon3Img.src = `/lab-11-pokecatcher/assets/${pokemon1.url_image}`;
+    pokemon3Img.src = `/lab-11-pokecatcher/assets/${pokemon3.url_image}`;
     pokemon3Radio.value = pokemon3.id;
 };
 
