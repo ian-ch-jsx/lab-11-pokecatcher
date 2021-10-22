@@ -91,6 +91,11 @@ h2 {
     justify-content: center;
 }
 
+#reset-button {
+    display: flex;
+    justify-content: center;
+}
+
 input[type=radio] {
     display: none;
 }
@@ -111,6 +116,18 @@ button {
     border: 0px;
     background-color: transparent;
     color:#FFDE00;
+    font-family: 'Noto Sans Mono', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+button#reset {
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px double #fefefe;
+    background-color: #3B4CCA;
+    color:#F3F63C;
     font-family: 'Noto Sans Mono', sans-serif;
     font-size: 1rem;
     font-weight: bold;
