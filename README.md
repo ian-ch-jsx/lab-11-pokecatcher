@@ -1,4 +1,4 @@
-# Pokemon Plan
+# Pokemon Plan Day 1
 >---
 >### step one
 >* start dev branch...
@@ -48,7 +48,7 @@ const results = [
     { id: 'mimikyu', encountered: 1, caught: 1 };
 ]
 ```
-* getResults -- return the results array or empty array
+* getPokedex -- return the results array or empty array
 * showPokemon -- increment the encountered key for a pokemon
 * catchPokemon -- increment the caught key for a pokemon
 
@@ -98,3 +98,15 @@ const results = [
     };
     generateFruit();
 ```
+
+## Results Page
+### HTML Elements
+* Image
+* header with the name of the pokemon
+* how many times shown, how many times picked
+
+### results.js
+* get the data from localStorage
+* loop through each item in results
+* get its data from fruits.js using findByID
+* render the results (img, header, data)

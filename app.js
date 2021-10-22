@@ -1,12 +1,17 @@
 import pokemon from './data/pokemon.js';
-// import { findByID } from './utils.js';
+import { catchPokemon, encounterPokemon } from './storage-utils.js';
+
 const catchBtn = document.getElementById('catch-button');
 const errorMessage = document.getElementById('error');
 const playCountSpan = document.getElementById('play-count');
+
 const pokemon1Img = document.getElementById('poke-1-img');
 const pokemon2Img = document.getElementById('poke-2-img');
 const pokemon3Img = document.getElementById('poke-3-img');
-// const playCountSpan = document.getElementById('play-count');
+
+const pokemon1Radio = document.getElementById('poke-1-radio');
+const pokemon2Radio = document.getElementById('poke-2-radio');
+const pokemon3Radio = document.getElementById('poke-3-radio');
 
 const generatePokemon = () =>{
     let randNum1 = Math.floor(Math.random() * pokemon.length);
@@ -22,29 +27,40 @@ const generatePokemon = () =>{
         randNum3 = Math.floor(Math.random() * pokemon.length);    
     }
     let pokemon1 = pokemon[randNum1];
+    encounterPokemon(pokemon1.id);
     pokemon1Img.src = pokemon1.url_image;
+    pokemon1Radio.value = pokemon1.id;
+
     let pokemon2 = pokemon[randNum2];
+    encounterPokemon(pokemon2.id);
     pokemon2Img.src = pokemon2.url_image;
+    pokemon2Radio.value = pokemon2.id;
+
     let pokemon3 = pokemon[randNum3];
+    encounterPokemon(pokemon3.id);
     pokemon3Img.src = pokemon3.url_image;
+    pokemon3Radio.value = pokemon3.id;
 };
 
+let playCount = 0;
 generatePokemon();
 
-let playCount = 0;
-
 catchBtn.addEventListener('click', ()=>{
-    const selected = document.querySelector('input[type=radio]:checked');
-    if (!selected) {
+    const capturedRadio = document.querySelector('input[type=radio]:checked');
+    if (!capturedRadio) {
         errorMessage.classList.remove('hidden');
     }
-    else if (playCount < 9) {
+    if (capturedRadio){
+        const capturedId = Number(capturedRadio.value);
         playCount++;
+        catchPokemon(capturedId);
         errorMessage.classList.add('hidden');
-        generatePokemon();
+    }
+    if (playCount >= 10) {
+        window.location.replace('./results');
     }
     else {
-        window.location.replace('./results');
+        generatePokemon();
     }
     playCountSpan.textContent = playCount + ' of 10 plays.';
 });

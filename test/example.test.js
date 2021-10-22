@@ -1,5 +1,6 @@
-import { findByID } from '../utils.js';
+import { catchPokemon, encounterPokemon, findByID } from '../storage-utils.js';
 import pokemon from '../data/pokemon.js';
+import { getPokedex } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -37,6 +38,86 @@ test('findByID should return matching item', (expect)=>{
         'pokebase':'bulbasaur',
         'pokedex':'http://www.pokemon.com/us/pokedex/bulbasaur'
     };
-    const actual = findByID(1, pokemon);
+    const actual = findByID(pokemon, 1);
     expect.deepEqual(actual, expected);
 });
+
+test('getPokedex returns the key "POKEDEX" from localStorage', (expect) =>{
+    const pokedex = [
+        { id: 3, shown: 2, picked: 5 },
+        { id: 1, shown: 3, picked: 1 }
+    ];
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, pokedex);
+});
+
+test('getPokedex returns an empty array if there is no POKEDEX key in localStorage', (expect)=>{
+    localStorage.removeItem('POKEDEX');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, []);
+});
+
+test('encounterPokemon increments the encountered key when the poke exists in results', (expect)=>{
+    const pokedex = [
+        { id: 'pikachu', encountered: 1, captured: 1 },
+    ];
+
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const expected = [
+        { id: 'pikachu', encountered: 2, captured: 1 },
+    ];
+
+    encounterPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+});
+
+test('encounterPokemon adds a new poke if its not in the results', (expect) =>{
+    localStorage.removeItem('POKEDEX');
+
+    const expected = [
+        { id: 'pikachu', encountered: 1, caught: 0 }
+    ];
+
+    encounterPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+
+});
+
+test('catchPokemon adds poke to the caught key when the pokemon exists in pokedex', (expect)=>{
+    const pokedex = [ 
+        { id: 'pikachu', encountered: 3, caught: 1 }
+    ];
+
+    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+
+    const expected = [
+        { id: 'pikachu', encountered: 3, caught: 2 }
+    ];
+
+    catchPokemon('pikachu');
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
+});
+
+// test('setPokedex functioning', (expect) =>{
+//     const expected = [
+//         { id: 'pikachu', encountered: 3, caught: 1 }
+//     ];
+//     setPokedex(expected);
+//     const actual = getPokedex();
+//     expect.deepEqual(actual, expected);
+// });
